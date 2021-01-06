@@ -94,9 +94,17 @@ f(n) belong to Sigma(n^(log(a+eta,b)
  2. condition 2
  
  渐进表达式的运算时间以叶节点占大多数，T(n) = theta(n^(log(a, b)),
-condition为f(n)=theta(n^(log(a-eta,b))
+condition为f(n)=theta(n^(log_b^a-eta))
  
  3。 condition 3 
  
  各层操作量相同。 即T(n)=theta(n^(log(a,b))* log n)), condition为f(n)=theta(n^(log(a,b))
  
+**注意实际上我们对比的都是f(n)和n^log(a, b) ( or log(a)-log(b)))**
+
+当了解公式后，我们很容易可以得到mergesort的time complexity.
+
+Since in merge sort, we have
+T(n)=2T(n/2)+n, f(n)= n belong to theta (n^log(2, 2)), then we have it = to condition 3, so time complexity is
+nlogn
+
